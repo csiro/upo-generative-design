@@ -1,0 +1,24 @@
+INFO:__main__:Load PB data.
+INFO:__main__:Load Styrene data.
+INFO:__main__:Join PB data.
+INFO:__main__:Length of PB EF data = 3846
+INFO:__main__:Length of S read count data = 30801
+INFO:__main__:Length of all joined data = 30801
+INFO:__main__:Length of valid SD sequences 30801
+INFO:__main__:Rank all measured data
+INFO:__main__:Aggregate ranks
+INFO:__main__:Load validation dataset
+INFO:__main__:Save correlations
+INFO:__main__:CPE Training
+INFO:__main__:#positives = 3094, proportion = 0.100
+INFO:__main__:Loading pretrained CPE
+INFO:__main__:Prepairing a prior model: DTransformerProposal
+INFO:__main__:Loading a prior model: DTransformerProposal
+INFO:__main__:Visualise prior sequence samples.
+INFO:__main__:Preparing posterior model
+INFO:__main__:Loading pretrained posterior model
+INFO:__main__:Visualise posterior samples.
+INFO:__main__:Compare validation sequences
+INFO:__main__:Generate novel sequences.
+INFO:__main__:Generated sequences in training data: # 923, proportion 0.245
+INFO:__main__:Diversity: train = 3.988, gen = 2.990.

@@ -1,0 +1,5 @@
+﻿Strategy,Styrene oxide (AUC),Phenylacetaldehyde (AUC),Styrene oxide (μM),Phenylacetaldehyde (μM),PA (pmol/μg),SO (pmol/μg),"aspec(SO, PA)"
+G,29.97,10.32,53.15,21.92,42.8,104.3,-0.003129
+R,8.826,2.87,15.04,6.33,11.83,27.99,-0.6425
+Brunner Munzel p-value,0.001045,0.0006607,0.001045,0.0006607,0.0004446,0.0006114,0.0008527
+Kolmogorov-Smirnov p-value,0.001984,0.0005579,0.001984,0.0005579,0.006149,0.0005579,0.006149

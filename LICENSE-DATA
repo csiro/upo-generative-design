@@ -1,0 +1,39 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright 2025 Commonwealth Scientific and Industrial Research Organisation
+(CSIRO)
+
+This license applies to the contents of the `data/` and `results/` directories
+of this repository: the ultrahigh throughput screening and validation datasets,
+the trained model checkpoints (`*.pt`), and the derived result tables and
+figures. The source code in this repository is licensed separately under the
+Apache License, Version 2.0 (see LICENSE).
+
+You are free to:
+
+  Share  - copy and redistribute the material in any medium or format
+  Adapt  - remix, transform, and build upon the material for any purpose,
+           even commercially
+
+under the following terms:
+
+  Attribution - You must give appropriate credit, provide a link to the
+  license, and indicate if changes were made. You may do so in any reasonable
+  manner, but not in any way that suggests the licensor endorses you or your
+  use.
+
+Please attribute by citing:
+
+  Nair, P.M., Steinberg, D.M., Resende, T., Suarez, A.F., Power, H., Ong, C.S.,
+  Sairam, V., Cheng, S.H.-Y., Fragata, L., Serafini, A., Oh, V., Tan, S.H.,
+  Speight, R.E., Vahidi, A.K. (2025). Generative Machine Learning Harnesses
+  Droplet Microfluidics to Design Improved Enzymes Beyond the Screen. bioRxiv
+  2025.11.02.685536. https://doi.org/10.1101/2025.11.02.685536
+
+The preprint at that DOI was posted under the earlier title "Ultrahigh
+throughput screening to train generative protein models for engineering
+specificity into unspecific peroxygenases".
+
+The full license text is available at:
+
+  https://creativecommons.org/licenses/by/4.0/legalcode

@@ -1,0 +1,12 @@
+.env/
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+build/
+*.egg-info/
+upo/tmp/
+
+# figure1.py writes its output next to itself
+upo/figure1.png
+upo/figure1.svg

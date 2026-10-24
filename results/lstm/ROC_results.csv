@@ -1,0 +1,2 @@
+﻿,"All AUC > 1, p(z) = 0.476","Styrene Activity, p(z) = 0.143","Styrene Specfic Activity, p(z) = 0.095","Total Activity, p(z) = 0.095","Total Specific Activity, p(z) = 0.095","SOI(SO, PA) > WT, p(z) = 0.429","SOI(SO, PA) > .5, p(z) = 0.095","Activity Styrene oxide (μM) > WT, p(z) = 0.143"
+VSD_LSTM,"0.791 (0.639, 0.907)","0.648 (0.463, 0.819)","0.763 (0.605, 0.895)","0.763 (0.605, 0.895)","0.763 (0.605, 0.895)","0.704 (0.544, 0.847)","0.421 (0.263, 0.579)","0.648 (0.463, 0.819)"

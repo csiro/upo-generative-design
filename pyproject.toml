@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools >= 77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "allozymes"
+version = "1.0.0"
+dependencies = [
+    "matplotlib",
+    "notebook",
+    "numpy",
+    "pandas",
+    "polyleven",
+    "scipy",
+    "seaborn",
+    "openpyxl",
+    "scikit-learn",
+    "plotly",
+    "kaleido",
+    "torch",
+    "vsd@git+https://github.com/csiro-funml/variationalsearch.git@ICLR"
+]
+requires-python = ">=3.10"
+authors = [
+  {name = "Dan Steinberg", email = "dan.steinberg@data61.csiro.au"},
+]
+maintainers = [
+  {name = "Dan Steinberg", email = "dan.steinberg@data61.csiro.au"},
+]
+description = "Generative models for engineering specificity into unspecific peroxygenases."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "LICENSE-DATA", "NOTICE"]
+
+[tool.setuptools]
+packages = ["upo"]
