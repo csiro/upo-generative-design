@@ -10,12 +10,7 @@ Fragata, Alessandro Serafini, Victor Oh, Say Hwa Tan, Robert E. Speight, Akbar
 K. Vahidi.
 
 Preprint: bioRxiv 2025.11.02.685536;
-doi: https://doi.org/10.1101/2025.11.02.685536. The preprint was posted under
-the earlier title "Ultrahigh throughput screening to train generative protein
-models for engineering specificity into unspecific peroxygenases".
-
-This repository contains what is needed to reproduce the results reported
-in the paper, and nothing more.
+doi: https://doi.org/10.1101/2025.11.02.685536.
 
 The generative models are variational search distributions (VSD), trained on
 ultrahigh throughput screening (uHTS) data of an unspecific peroxygenase
@@ -99,10 +94,10 @@ so a transformer run cannot overwrite the LSTM results.
 will *load* them rather than retrain, and only recompute the analysis around
 them. That is what you want to reproduce the paper.
 
-To genuinely retrain, point `RESPATH` at an empty directory of your own, then
+To retrain, point `RESPATH` at an empty directory of your own, then
 point `RESPATH` in `analyse_results.ipynb` at the same place to score the
 result. Alternatively, delete the `*.pt` files from `results/<model>` to
-retrain in place — training is seeded (`SEED = 139`), but exact
+retrain in place. Training is seeded (`SEED = 139`), but exact
 reproducibility across different hardware and library versions is not
 guaranteed, so expect `git diff` to show small numerical changes.
 
@@ -121,34 +116,20 @@ byte-for-byte (modulo a UTF-8 BOM, see below):
   `20_variants_scored.csv`. The proposal models carry no dropout, so scoring
   a loaded checkpoint is exact.
 
-The `CPE_ll` and `Acq` columns of `20_variants_scored.csv`, and the
-correlations in `validation_spearman_corr.csv` that derive from them, are
-deterministic on a re-run but **differ from the published values** by up to
-about 2 nats.
-
 The class probability estimator uses dropout (`dropoutp=0.1`). Scoring it is
 only deterministic with the model in eval mode, which `fit_cpe` leaves it in
 after training but which the checkpoint-loading path did not previously set.
 The published column is statistically consistent with a single dropout-active
-draw from `results/lstm/cpe.pt`, the checkpoint shipped here: it sits a median
-0.8 standard deviations from the dropout mean, where a real draw is that
-extreme about 40% of the time. The published values are therefore a one-off
-noisy sample rather than the surrogate's actual scores, and are not
-reproducible by anyone, ourselves included. The eval-mode values that a re-run
-now produces are the correct ones.
-
-This affects only the two columns above and the correlations derived from
-them. `analyse_results.ipynb`, which produces the result tables and figures in
-the paper, drops `CPE_ll` and `Acq` and correlates the measurements against
-the proposal log-likelihoods (`VSD_LSTM`, `FT_LSTM`, `Prior_LSTM`) instead,
-all of which reproduce exactly. The variant ranking is likewise unaffected:
-`Rank` comes from the uHTS rank aggregation.
+draw from `results/lstm/cpe.pt`. This affects only the two columns `CPE_ll` 
+and `Acq` of `20_variants_scored.csv`, and the correlations in 
+`validation_spearman_corr.csv` that derive from them. These were not used in 
+the analysis or paper results.
 
 **`generated_upo.csv` does not reproduce.** Sequence generation samples from
 the variational distribution, and `torch.manual_seed(SEED)` is set once at the
 top of the notebook. How many random numbers have been drawn by the time
-generation runs therefore depends on how much training happened first — and
-when the checkpoints already exist, training is skipped. A re-run produces a
+generation runs therefore depends on how much training happened first, when the 
+checkpoints already exist, and if training is skipped. A re-run produces a 
 different, equally valid sample of roughly 4400 sequences rather than the
 published one.
 
@@ -159,9 +140,9 @@ the paper's numbers.
 
 Two smaller caveats:
 
-- `20_variants_scored.csv` gains a `Finetuned_ll` column on a re-run. The
-  published file predates the finetuning baseline, so the regenerated file is
-  a superset of it.
+- `20_variants_scored.csv` gains a `Finetuned_ll` column on a re-run, which was
+  created to answer reviewer questions. The published file predates the finetuning
+  baseline, so the regenerated file is a superset of it.
 - The committed `ranked_variants.csv`, `generated_upo.csv` and
   `targets_spearman_corr.csv` have no UTF-8 BOM, while the notebook now writes
   with `encoding="utf-8-sig"`. A re-run will show a one-byte header diff on
