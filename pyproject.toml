@@ -30,7 +30,7 @@ maintainers = [
 description = "Generative models for engineering specificity into unspecific peroxygenases."
 readme = "README.md"
 license = "Apache-2.0"
-license-files = ["LICENSE", "LICENSE-DATA", "NOTICE"]
+license-files = ["LICENSE", "LICENSE-DATA"]
 
 [tool.setuptools]
 packages = ["upo"]
